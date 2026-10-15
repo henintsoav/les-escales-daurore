@@ -1,0 +1,58 @@
+:root {
+  --ivoire: #FAF7F2;
+  --rose: #DDB8BB;
+  --terracotta: #C9862B;
+  --soleil: #E9B949;
+  --sauge: #A7B09B;
+  --cacao: #443B38;
+  --cacao-light: #6b5b57;
+
+  --font-title: 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--ivoire);
+  color: var(--cacao);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--ivoire); }
+::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 3px; }

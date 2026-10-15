@@ -1,0 +1,127 @@
+.page { overflow-x: hidden; }
+
+.hero {
+  position: relative;
+  height: 50vh;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 72px;
+  background-size: cover;
+  background-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(68,59,56,0.35), rgba(68,59,56,0.65));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--ivoire);
+  padding: 0 1.5rem;
+}
+
+.heroEyebrow {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.heroTitle {
+  font-family: var(--font-title);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.heroSub {
+  font-size: 0.95rem;
+  color: rgba(250,247,242,0.8);
+  max-width: 480px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(68,59,56,0.06);
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(68,59,56,0.14);
+}
+
+.cardImg {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.card:hover .cardImg img { transform: scale(1.05); }
+
+.cardBody { padding: 1.5rem; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  border: 1px solid var(--terracotta);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--cacao);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.cardDesc {
+  font-size: 0.85rem;
+  color: var(--cacao-light);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.readMore {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--rose);
+  transition: color 0.2s;
+}
+
+.card:hover .readMore { color: var(--terracotta); }

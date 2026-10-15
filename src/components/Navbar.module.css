@@ -1,0 +1,143 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: background 0.3s, box-shadow 0.3s;
+  padding: 0 2rem;
+}
+
+.header.scrolled {
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 20px rgba(68, 59, 56, 0.08);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brandName {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cacao);
+}
+
+.brandSub {
+  font-family: var(--font-title);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--terracotta);
+  font-weight: 400;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cacao);
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.2s;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--terracotta);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+  transform-origin: left;
+}
+
+.link:hover,
+.link.active {
+  color: var(--terracotta);
+}
+
+.link:hover::after,
+.link.active::after {
+  transform: scaleX(1);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.burger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--cacao);
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .burger { display: flex; }
+
+  .links {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--ivoire);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 1rem 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.3s;
+    box-shadow: 0 4px 20px rgba(68,59,56,0.1);
+  }
+
+  .links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .links li { width: 100%; text-align: center; }
+
+  .link {
+    display: block;
+    padding: 1rem;
+  }
+}
